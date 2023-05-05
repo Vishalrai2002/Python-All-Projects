@@ -17,15 +17,30 @@ def speed_time(time_s,time_e,userinput):
     speed=len(userinput)/time_Roundoff
     return round(speed)
 
-test=["Hello how are you guys","now i am learning python","i am also preparing for my placements"]
 
-test1=r.choice(test)
+if __name__ == '__main__':
+    while True:
+        check=input("Ready to begin: yes or no :")
+        if check=='yes':
+            test=["Hello how are you guys","now i am learning python","i am also preparing for my placements"]
 
-print("     ******  Typing Speed  ******")
-print(test1)
-print()
-print()
+            test1=r.choice(test)
 
-time_1=time()
-testinput=input("Enter : ")
-time_2=time()
+            print("     ******  Typing Speed  ******")
+            print(test1)
+            print()
+            print()
+
+            time_1=time()
+            testinput=input("Enter : ")
+            time_2=time()
+
+            print('Speed : ',speed_time(time_1,time_2,testinput),"w/sec")
+
+            print('Error : ',mistake(test1,testinput))
+        elif check=="no":
+            print("Thanks you for using it!")
+            break
+        else:
+            print("wrong input")
+            break
